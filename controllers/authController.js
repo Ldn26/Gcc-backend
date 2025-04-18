@@ -1,6 +1,4 @@
-// const User = require('../sequelize/models/User');
-// const bcrypt = require('bcrypt');
-// const jwt = require('jsonwebtoken');
+
 
 // const signup = async (req, res) => {
 //     const { name, email,password} = req.body;
@@ -76,12 +74,11 @@
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
 // Signup
 const signup = async (req, res) => {
-  const { name, email, password ,servicetype } = req.body;
+  const { name, email, password ,servicetype  , phonenumber   , tradenumber} = req.body;
   try {
-    if (!name || !email || !password  || !servicetype) {
+    if (!name || !email || !password  || !servicetype  ||  !phonenumber ||   !tradenumber  ) {
       return res
         .status(400)
         .json({ message: " u must fill all the fields " });

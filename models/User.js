@@ -41,9 +41,15 @@ const userSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-    
     email: {
       type: String,
+      required: true,
+      unique: true,
+      lowercase: true,
+      trim: true,
+    },
+    tradenumber: {
+      type: Number,
       required: true,
       unique: true,
       lowercase: true,
@@ -57,6 +63,12 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
+    },
+    phone: {
+      type: Number,
+      required: true,
+      unique: true,
+      trim: true,
     },
   },
   {
